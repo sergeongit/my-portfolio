@@ -1,0 +1,23 @@
+<button mat-button color="accent" class="icon-btn nav-btn -large"  [routerLink]="['/', 'home']">
+    <span class="material-symbols-outlined">home</span>
+</button>
+
+<section class="skills-container">
+    <div class="skill-box" *ngFor="let skill of skills" >
+        <div class="image-box">
+            <img
+                [src]=" './assets/icons/' + skill.imgName"
+                alt="{{ skill.name }}"
+            >
+        </div>
+        <div class="image-box">
+            <img
+                [src]=" './assets/icons/' + skill.imgName"
+                alt="{{ skill.name }}"
+                matTooltip="{{ skill.name }}"
+                matTooltipClass="-primary-bg"
+            >
+        </div>
+    </div>
+    <ng-container></ng-container>
+</section>

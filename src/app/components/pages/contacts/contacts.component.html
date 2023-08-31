@@ -1,0 +1,30 @@
+<button mat-button color="accent" class="icon-btn nav-btn -large"  [routerLink]="['/', 'home']">
+    <span class="material-symbols-outlined">home</span>
+</button>
+
+<section class="contacts-container wrapper">
+    <div class="contact-item">
+        <div class="image-box">
+            <img src="./assets/icons/telegram.png" alt="telegram">
+        </div>
+        <a class="main-text" href="https://t.me/chaserply" target="_blank">Telegram</a>
+    </div>
+
+    <div class="contact-item">
+        <div class="image-box">
+            <img src="./assets/icons/linkedin.png" alt="linkedin">
+        </div>
+        <a class="main-text" href="https://www.linkedin.com/in/sergeychaplygin/" target="_blank">Linkedin</a>
+    </div>
+
+    <div class="contact-item">
+        <div class="image-box">
+            <img src="./assets/icons/email.png" alt="email">
+        </div>
+        <button mat-button color="accent" class="default-button copy-button"
+                (click)="openSnackBar()"
+                [cdkCopyToClipboard]="email">
+            copy email
+        </button>
+    </div>
+</section>

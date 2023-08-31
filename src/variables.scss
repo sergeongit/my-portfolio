@@ -1,0 +1,28 @@
+// ___ This file is for theme variables
+
+//_________________________COLORS
+
+//__text
+$color-text-primary: #ffe0eb;
+$color-text-secondary: #0a2d2d;
+
+//__link
+$color-link-primary: #9e2dec;
+//$color-link-secondary: #35aff3;
+
+//__background
+$color-bg-main: #cc7bff;
+$color-bg-light: linear-gradient(270deg, rgba(208, 62, 69, 0.75) 10%, rgba(57,208,218,1) 100%);
+$color-bg-alt: #9e2dec;
+
+//__alert
+$color-alert-main: #ec0606;
+$color-alert-dark: #981313;
+$color-alert-accent: rgba(255, 64, 129, 0.82);
+$color-alert-info: rgba(10, 215, 250, 0.82);
+
+
+//_____________________ANIMATION
+$smooth-animation: all 0.2s ease-out;
+
+

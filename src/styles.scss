@@ -1,0 +1,160 @@
+@import "variables";
+@import "custom-material-theme";
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: linear-gradient(90deg, #020024 0%, #2b2b66 55%, #02596a 100%);
+}
+
+a {
+    transition: $smooth-animation;
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
+//------------------------------
+// custom scrollbar
+
+* {
+    // for Firefox
+    scrollbar-color: $color-alert-accent rgba(255, 64, 129, 0.2);
+    scrollbar-width: 16px;
+
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 64, 129, 0.6);
+        border-radius: 0;
+        opacity: 0.3;
+    }
+
+    &::-webkit-scrollbar-track {
+        //opacity: 0;
+        background: rgba(255, 64, 129, 0.2);
+        border-radius: 0;
+    }
+
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            background: $color-alert-accent;
+        }
+    }
+
+    &:active {
+        &::-webkit-scrollbar-thumb {
+            opacity: 1;
+            background: rgba(255, 64, 129, 0.6);
+        }
+
+        &::-webkit-scrollbar-track {
+            opacity: 1;
+        }
+    }
+}
+
+//--------------------------------
+// here is general styles template
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+
+    &.-center {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.text-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 80%;
+    padding: 24px;
+    border: 1px solid $color-alert-main;
+    overflow-y: auto;
+}
+
+.main-text {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 1.6px;
+    color: $color-text-primary;
+    text-overflow: ellipsis;
+
+    &.-text-divider {
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $color-bg-alt;
+        &:after {
+            position: absolute;
+            z-index: 2;
+            content: '';
+            bottom: -10px;
+            left: calc(50% - 10px);
+            width: 20px;
+            height: 20px;
+            transform: rotate(45deg);
+            background: $color-bg-alt;
+        }
+    }
+}
+
+//----------------------------------
+//  MIXINS
+@mixin addSpacingOfViewportFrame {
+    max-width: calc(100% - 32px);
+    padding: 16px 18px;
+}
+
+@media all and (max-width: 1200px) {
+    .text-container {
+        @include addSpacingOfViewportFrame;
+    }
+}
+
+@media all and (max-width: 1024px) {
+    .main-text {
+        font-size: 20px;
+        line-height: 26px;
+
+        &.-text-divider {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            &:after {
+                bottom: -5px;
+                left: calc(50% - 5px);
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 480px) {
+    .main-text {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
